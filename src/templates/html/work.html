@@ -1,0 +1,30 @@
+    <section class="section">
+        <h2 class='section-title'>Experience</h2>
+        <section id="work">
+            {%- for work in input['work'] %}
+            <header>
+                <h3 class="name">{{ work.company }}</h3>
+                <div class="date">
+                    <span class="startDate">{{ work.startDate|datetime }}</span>
+                    <span class="endDate"> - {{ work.endDate|datetime }}</span>
+                </div>
+            </header>
+            <div class="item">
+                <div class="position">{{ work.position }}</div>
+                <div class="website">
+                    <a href="{{ work.website }}">{{ work.website }}</a>
+                </div>
+                <div class="summary">
+                    <p>{{ work.summary }}</p>
+                </div>
+                {%- if 'highlights' in work %}
+                <ul class="highlights">
+                    {%- for highlight in work['highlights'] %}
+                    <li>{{ highlight }}</li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+            </div>
+            {%- endfor %}
+        </section>
+    </section>

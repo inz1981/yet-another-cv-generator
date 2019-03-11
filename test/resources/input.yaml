@@ -1,0 +1,93 @@
+basics:
+  name: Kålle (1976-01-29)
+  label: Developer
+  picture: http://mypage.se/img/kalle.jpg
+  email: kalle@gmail.com
+  phone: 076-1 23 45 67
+  website: http://www.mypage.se
+  summary: Kålle is a developer...
+  location:
+    address: Adagatan 1
+    postalCode: 414 63
+    city: Göteborg
+    countryCode: SE
+    region: Västra Götaland
+  profiles:
+  - network: LinkedIn
+    username: kaalle-b1234567
+    url: https://www.linkedin.com/in/kaalle-b1234567/
+work:
+- company: 'Company #1'
+  position: Developer
+  website: http://www.companyone.com
+  startDate: '2017-01-01'
+  endDate: Present
+  summary: Development team member, Awesome Feature.
+  highlights:
+  - Stuff 1
+  - Other stuff
+  - more cool stuff...
+- company: 'Company #2'
+  position: Developer
+  website: http://www.companytwo.com
+  startDate: '2014-01-01'
+  endDate: '2016-12-31'
+  summary: Development team member, Awesome Feature.
+  highlights:
+  - Stuff 1
+  - Other stuff
+  - more cool stuff...
+awards:
+- title: 'Awards #1'
+  date: '2017-11-01'
+  awarder: 'Company #1 Awards'
+  summary: Awesome award for being awesome
+- title: 'Award #2'
+  date: '2012-10-01'
+  awarder: 'Company #2'
+  summary: Awesome award for being awesome
+publications: []
+skills:
+- name: Programming
+  level: Master
+  keywords:
+  - Python
+  - Perl
+  - Javascript
+  - CSS
+  - HTML
+  - PHP
+- name: Programming
+  level: Basic
+  keywords:
+  - Java
+  - C
+  - C++
+- name: Database
+  level: Master
+  keywords:
+  - SQL
+  - NoSQL
+- name: Version Control
+  level: Master
+  keywords:
+  - Git
+  - Subversion
+  - ClearCase
+languages:
+- language: Swedish
+  fluency: Native speaker
+- language: English
+  fluency: Fluent
+interests:
+- name: Excercise
+  keywords:
+  - Interest 1
+  - Interest 2
+- name: Sports
+  keywords:
+  - Sports 1
+  - Sports 2
+references:
+- name: 'Company #1'
+  reference: Will be provided upon request

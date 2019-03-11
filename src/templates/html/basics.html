@@ -1,0 +1,54 @@
+    <header id="header">
+        <img src="{{ input['basics'].picture }}" alt="Kålle"/>
+        <div class="middle">
+            <h1 class="name">{{ input['basics'].name }}</h1>
+            <h2 class="label">{{ input['basics'].label }}</h2>
+        </div>
+    </header>
+
+    <section id="basics">
+
+        <div id="location">
+            <span class="fa fa-map-marker"></span>
+            <span class="address">{{input['basics'].location.address }},</span>
+            <span class="postalCode">{{input['basics'].location.postalCode }},</span>
+            <span class="city">{{input['basics'].location.city}}</span>
+            <span class="countryCode">({{input['basics'].location.countryCode }}),</span>
+            <span class="region">{{input['basics'].location.region}}</span>
+        </div>
+
+        <div id="contact">
+            <div class="website">
+                <a href="{{input['basics'].website }}">{{input['basics'].website }}</a>
+            </div>
+            <div class="email">
+                <span class="fa fa-envelope"></span>
+                <a href="mailto:{{input['basics'].email }}">{{input['basics'].email }}</a>
+            </div>
+            <div class="phone">
+                <span class="fa fa-phone-square"></span>
+                {{input['basics'].phone }}
+            </div>
+        </div>
+        {%- if 'profiles' in input['basics'] %}
+        <div id="profiles">
+            {%- for profile in input['basics']['profiles'] %}
+            <div class="item">
+                <span class="network fa fa-{{ profile.network.lower() }} {{ profile.network.lower() }}"></span>
+                <span class="username">
+                    <span class="url">
+                        <a href="{{ profile.url }}">{{ profile.username }}</a>
+                    </span>
+                </span>
+            </div>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+    </section>
+
+    <section class="section main-summary">
+        <h2 class='section-title'>About</h2>
+        <section>
+            <p>{{ input['basics'].summary }}</p>
+        </section>
+    </section>

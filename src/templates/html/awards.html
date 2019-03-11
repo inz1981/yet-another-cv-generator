@@ -1,0 +1,15 @@
+    <section class="section">
+        <h2 class='section-title'>Awards</h2>
+        <section id="awards">
+            {%- for award in input['awards'] %}
+            <div class="date">{{ award.date|datetime(format="%-d %B %Y") }}</div>
+            <div class="item">
+                <div class="title">{{ award.title }}</div>
+                <div class="awarder">{{ award.awarder }}</div>
+                <div class="summary">
+                    <p>{{ award.summary }}</p>
+                </div>
+            </div>
+            {%- endfor %}
+        </section>
+    </section>

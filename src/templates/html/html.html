@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+{% include 'base.html' %}
+
+<body>
+<div id="resume">
+{% if 'basics' in input %}{% include 'basics.html' %}{% endif %}
+
+{% if 'work' in input %}{% include 'work.html' %}{% endif %}
+
+{% if 'education' in input %}{% include 'education.html' %}{% endif %}
+
+{% if 'awards' in input %}{% include 'awards.html' %}{% endif %}
+
+{% if 'skills' in input %}{% include 'skills.html' %}{% endif %}
+
+{% if 'languages' in input %}{% include 'languages.html' %}{% endif %}
+
+{% if 'interests' in input %}{% include 'interests.html' %}{% endif %}
+
+{% if 'references' in input %}{% include 'references.html' %}{% endif %}
+
+</div>
+</body>
+
+</html>
+

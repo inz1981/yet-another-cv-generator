@@ -1,0 +1,17 @@
+    <section class="section">
+        <h2 class='section-title' class='section-title'>Interests</h2>
+        <section id="interests">
+            {%- for interest in input['interests'] %}
+            <div class="item">
+                <div class="name">{{ interest.name }}</div>
+                {%- if 'keywords' in interest %}
+                <ul class="keywords">
+                    {%- for keyword in interest['keywords'] %}
+                    <li>{{ keyword }}</li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+            </div>
+            {%- endfor %}
+        </section>
+    </section>
