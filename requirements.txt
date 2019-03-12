@@ -1,6 +1,6 @@
 pyaml
 jinja2
-pytest
+pytest==4.3.0
 pytest-pylint
 pytest-pep8
 pytest-cov
