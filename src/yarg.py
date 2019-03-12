@@ -3,9 +3,9 @@ import argparse
 import logging
 import os
 import sys
+from helpers.logger import setup_logging
 from inout.loader import InputLoader
 from inout.writer import OutputWriter
-from helpers.logger import setup_logging
 
 
 def arguments(args) -> argparse:
@@ -52,9 +52,9 @@ def generate(yargs: argparse):
 
 
 def main(args):
+    setup_logging()
     generate(arguments(args))
 
 
 if __name__ == '__main__':
-    setup_logging()
     main(sys.argv[1:])
