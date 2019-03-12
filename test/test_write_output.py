@@ -44,6 +44,7 @@ class TestWriteHtml(unittest.TestCase):
             shutil.rmtree(test_build)
 
     def test_write_complete_html(self):
+        import datetime
         # Given the user wants to write the CV as HTML format
         inputdata = 'input_complete.json'
         my_writer = OutputWriter(filetype='html')
@@ -59,6 +60,9 @@ class TestWriteHtml(unittest.TestCase):
         # Then the contents of the html file is correct
         expected = utils.load_file_contents(utils.get_test_resources_path(
             'expected/html.html'))
+        expected = expected.replace(
+            "{{ today() }}", datetime.datetime.today().date().strftime(
+                "%Y-%m-%d"))
         actual = utils.load_file_contents(outputfile)
         self.assertEqual(expected, actual)
 

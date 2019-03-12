@@ -40,6 +40,8 @@ class OutputWriter:
         :param dict input_json: Input read into a dict
         :return: the contents of the generated file
         """
+        import datetime
+
         def format_datetime(value: str, dateformat="%B %Y") -> str:
             """
             Help function used as filter for Jinja rendering, converting
@@ -48,15 +50,23 @@ class OutputWriter:
             :param dateformat: output date format
             :return: text representation of date, e.g. 1 January 2018
             """
-            import datetime
             date = datetime.datetime.strptime(value, "%Y-%m-%d")
             return date.strftime(dateformat)
+
+        def today():
+            """
+            Help function used as filter for Jinja rendering, getting the
+            today's date
+            :return: date, e.g. 2019-03-10
+            """
+            return datetime.datetime.today().date()
 
         file_loader = FileSystemLoader(os.path.join(
             self.templates_path, self.filetype))
         env = Environment(loader=file_loader)
         env.filters['datetime'] = format_datetime
         template = env.get_template('{}.jinja2'.format(self.filetype))
+        template.globals['today'] = today
 
         self.contents = template.render(input=input_json)
         return self.contents

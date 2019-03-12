@@ -4,6 +4,8 @@
 
 <body>
 <div id="resume">
+<generated><i>This document is generated at ({{ today() }}) with Yarg! <a href="https://github.com/inz1981/yet-another-resume-generator" target="_blank">https://github.com/inz1981/</a></i></generated>
+
 {% if 'basics' in input %}{% include 'basics.html' %}{% endif %}
 
 {% if 'work' in input %}{% include 'work.html' %}{% endif %}
@@ -19,7 +21,7 @@
 {% if 'interests' in input %}{% include 'interests.html' %}{% endif %}
 
 {% if 'references' in input %}{% include 'references.html' %}{% endif %}
-
+<generated><i>This document is generated at ({{ today() }}) with Yarg! <a href="https://github.com/inz1981/yet-another-resume-generator" target="_blank">https://github.com/inz1981/</a></i></generated>
 </div>
 </body>
 
