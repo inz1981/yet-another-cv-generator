@@ -22,7 +22,7 @@ class OutputWriter:
         return self._filetype
 
     @filetype.setter
-    def filetype(self, filetype: str) -> str:
+    def filetype(self, filetype: str):
         """
         Set the filetype to be generated
         :param filetype: file type
@@ -61,14 +61,24 @@ class OutputWriter:
         self.contents = template.render(input=input_json)
         return self.contents
 
-    def save_outputfile(self, filepath: str):
+    def save_outputfile(self, filepath: str) -> str:
         """
         Save the contents as an appropriate file with file extension
         :param contents: the data content to write
         :param filepath: the path to write the file
-        :return: test
+        :return: the path to the file written
         """
         if not self.contents:
             raise ValueError("No output content available to write")
-        with open(filepath, 'w') as filewrite:
+        if self.filetype == 'html':
+            ext = '.html'
+        elif self.filetype == 'markdown':
+            ext = '.md'
+        else:
+            raise NotImplementedError(
+                '({}) is not a supported file type, choose from {}'.format(
+                    self.filetype, self.supported_filetypes))
+        fwrite = os.path.join(filepath, "{}{}".format(self.filetype, ext))
+        with open(fwrite, 'w') as filewrite:
             filewrite.write(self.contents)
+        return fwrite

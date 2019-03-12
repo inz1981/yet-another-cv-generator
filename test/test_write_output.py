@@ -26,8 +26,8 @@ class TestWriteMarkdown(unittest.TestCase):
         # When writing the markdown file
         my_writer.generate_output(json_data)
         outputfile = os.path.join(
-            utils.get_test_build_dir(), 'test_write_complete_markdown.md')
-        my_writer.save_outputfile(filepath=outputfile)
+            utils.get_test_build_dir())
+        outputfile = my_writer.save_outputfile(filepath=outputfile)
 
         # Then the contents of the markdown file is correct
         expected = utils.load_file_contents(utils.get_test_resources_path(
@@ -53,12 +53,20 @@ class TestWriteHtml(unittest.TestCase):
 
         # When writing the html file
         my_writer.generate_output(json_data)
-        outputfile = os.path.join(utils.get_test_build_dir(),
-                                  'test_write_complete_html.html')
-        my_writer.save_outputfile(filepath=outputfile)
+        outputfile = os.path.join(utils.get_test_build_dir())
+        outputfile = my_writer.save_outputfile(filepath=outputfile)
 
         # Then the contents of the html file is correct
         expected = utils.load_file_contents(utils.get_test_resources_path(
             'expected/html.html'))
         actual = utils.load_file_contents(outputfile)
         self.assertEqual(expected, actual)
+
+    def test_generate_from_unknown_filetype(self):
+        # Given the user wants to generate the CV
+        my_writer = OutputWriter()
+
+        # When trying to change the filetype
+        # Then an error is thrown
+        with self.assertRaises(NotImplementedError):
+            my_writer.filetype = "Imaginary"

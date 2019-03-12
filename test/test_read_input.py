@@ -22,3 +22,23 @@ class TestReadInput(unittest.TestCase):
         expected = json.dumps(expected, sort_keys=True, indent=2)
         actual = json.dumps(actual, sort_keys=True, indent=2)
         self.assertEqual(actual, expected)
+
+    def test_load_unknown_yamlfile(self):
+        # Given the user has not configured a resume file
+        yamlfile = 'imaginary.yaml'
+        my_loader = InputLoader()
+
+        # When parsing the file
+        # Then an error is thrown
+        with self.assertRaises(FileNotFoundError):
+            my_loader.load_yaml(yamlfile)
+
+    def test_load_unknown_jsonfile(self):
+        # Given the user has no json file
+        jsonfile = 'imaginary.json'
+        my_loader = InputLoader()
+
+        # When parsing the file
+        # Then an error is thrown
+        with self.assertRaises(FileNotFoundError):
+            my_loader.load_json(jsonfile)
