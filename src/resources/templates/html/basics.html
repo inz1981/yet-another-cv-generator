@@ -8,6 +8,11 @@
 
     <section id="basics">
 
+        <div id="birth">
+            <span class="fa fa-birthday-cake"></span>
+            <span class="dateOfBirth">{{ input['basics'].dateOfBirth|datetime(dateformat="%d of %B, %Y") }}</span>
+        </div>
+
         <div id="location">
             <span class="fa fa-map-marker"></span>
             <span class="address">{{input['basics'].location.address }},</span>

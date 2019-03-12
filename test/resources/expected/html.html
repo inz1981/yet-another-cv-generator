@@ -16,7 +16,7 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+dateOfBirth, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -40,7 +40,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: disc;
 }
 blockquote, q {
 	quotes: none;
@@ -87,7 +87,7 @@ ul {
 }
 div.item {
 	margin: 1em 0 2em;
-	padding-bottom: 2em;
+	padding-bottom: 0;
 }
 div.item:last-of-type {
 	margin: 0;
@@ -246,7 +246,7 @@ h2.section-title {
   padding-bottom: 1em;
 }
 
-#profiles, #location {
+#profiles, #location, #birth {
 	box-shadow: none;
 	padding: 0;
 }
@@ -287,6 +287,8 @@ h2.section-title {
 	min-width: 15em;
 	padding: 0 .5em .8em 0;
 	border-bottom: none;
+	position: relative;
+	width: 100%;
 }
 
 
@@ -543,6 +545,11 @@ h2.section-title {
     </header>
 
     <section id="basics">
+
+        <div id="birth">
+            <span class="fa fa-birthday-cake"></span>
+            <span class="dateOfBirth">29 of January, 1978</span>
+        </div>
 
         <div id="location">
             <span class="fa fa-map-marker"></span>
