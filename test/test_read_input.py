@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import json
 import unittest
-
 import utils
 from inout.loader import InputLoader
 
@@ -21,7 +20,7 @@ class TestReadInput(unittest.TestCase):
             'expected/exp_yaml_output.json'))
         expected = json.dumps(expected, sort_keys=True, indent=2)
         actual = json.dumps(actual, sort_keys=True, indent=2)
-        self.assertEqual(actual, expected)
+        self.assertEqual(expected, actual)
 
     def test_load_unknown_yamlfile(self):
         # Given the user has not configured a resume file

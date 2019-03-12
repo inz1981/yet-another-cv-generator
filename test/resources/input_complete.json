@@ -1,40 +1,43 @@
 {
-	"awards": [{
-			"awarder": "Company #1 Awards",
-			"date": "2017-11-01",
-			"summary": "Awesome award for being awesome",
-			"title": "Awards #1"
-		},
-		{
-			"awarder": "Company #2",
-			"date": "2012-10-01",
-			"summary": "Awesome award for being awesome",
-			"title": "Award #2"
-		}
-	],
-	"basics": {
-		"dateOfBirth": "1978-01-29",
-		"email": "kalle@gmail.com",
-		"label": "Developer",
-		"location": {
-			"address": "Adagatan 1",
-			"city": "Göteborg",
-			"countryCode": "SE",
-			"postalCode": "414 63",
-			"region": "Västra Götaland"
-		},
-		"name": "Kålle",
-		"phone": "076-1 23 45 67",
-		"picture": "http://mypage.se/img/kalle.jpg",
-		"profiles": [{
-			"network": "LinkedIn",
-			"url": "https://www.linkedin.com/in/kaalle-b1234567/",
-			"username": "kaalle-b1234567"
-		}],
-		"summary": "Kålle is a developer...",
-		"website": "http://www.mypage.se"
-	},
-	"education": [
+  "awards": [
+    {
+      "awarder": "Company #1 Awards",
+      "date": "2017-11-01",
+      "summary": "Awesome award for being awesome",
+      "title": "Awards #1"
+    },
+    {
+      "awarder": "Company #2",
+      "date": "2012-10-01",
+      "summary": "Awesome award for being awesome",
+      "title": "Award #2"
+    }
+  ],
+  "basics": {
+    "dateOfBirth": "1978-01-29",
+    "email": "kalle@gmail.com",
+    "label": "Developer",
+    "location": {
+      "address": "Adagatan 1",
+      "city": "Göteborg",
+      "countryCode": "SE",
+      "postalCode": "414 63",
+      "region": "Västra Götaland"
+    },
+    "name": "Kålle",
+    "phone": "076-1 23 45 67",
+    "picture": "http://mypage.se/img/kalle.jpg",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/kaalle-b1234567/",
+        "username": "kaalle-b1234567"
+      }
+    ],
+    "summary": "Kålle is a developer...",
+    "website": "http://www.mypage.se"
+  },
+  "education": [
     {
       "institution": "Awesome University of Awesomeness",
       "area": "Computer Science",
@@ -49,70 +52,89 @@
       ]
     }
   ],
-	"interests": [{
-			"keywords": ["Interest 1", "Interest 2"],
-			"name": "Excercise"
-		},
-		{
-			"keywords": ["Sports 1", "Sports 2"],
-			"name": "Sports"
-		}
-	],
-	"languages": [{
-			"fluency": "Native speaker",
-			"language": "Swedish"
-		},
-		{
-			"fluency": "Fluent",
-			"language": "English"
-		}
-	],
-	"publications": [],
-	"references": [{
-		"name": "Company #1",
-		"reference": "Will be provided upon request"
-	},{
-		"name": "Company #2",
-		"reference": "Ask me."
-	}],
-	"skills": [{
-			"keywords": ["Python",
-				"Javascript",
-				"CSS",
-				"HTML"
-			],
-			"level": "Master",
-			"name": "Programming"
-		},
-		{
-			"keywords": ["Marathon", "IronMan"],
-			"level": "Basic",
-			"name": "Running"
-		}
-	],
-	"work": [{
-			"company": "Company #1",
-			"endDate": "2019-03-10",
-			"highlights": ["Stuff 1",
-				"Other stuff",
-				"more cool stuff..."
-			],
-			"position": "Developer",
-			"startDate": "2017-01-01",
-			"summary": "Development team member, Awesome Feature.",
-			"website": "http://www.companyone.com"
-		},
-		{
-			"company": "Company #2",
-			"endDate": "2016-12-31",
-			"highlights": ["Stuff 1",
-				"Other stuff",
-				"more cool stuff..."
-			],
-			"position": "Developer",
-			"startDate": "2014-01-01",
-			"summary": "Development team member, Awesome Feature.",
-			"website": "http://www.companytwo.com"
-		}
-	]
+  "interests": [
+    {
+      "keywords": [
+        "Interest 1",
+        "Interest 2"
+      ],
+      "name": "Excercise"
+    },
+    {
+      "keywords": [
+        "Sports 1",
+        "Sports 2"
+      ],
+      "name": "Sports"
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native speaker",
+      "language": "Swedish"
+    },
+    {
+      "fluency": "Fluent",
+      "language": "English"
+    }
+  ],
+  "publications": [],
+  "references": [
+    {
+      "name": "Company #1",
+      "reference": "Will be provided upon request"
+    },
+    {
+      "name": "Company #2",
+      "reference": "Ask me."
+    }
+  ],
+  "skills": [
+    {
+      "keywords": [
+        "Python",
+        "Javascript",
+        "CSS",
+        "HTML"
+      ],
+      "level": "Master",
+      "name": "Programming"
+    },
+    {
+      "keywords": [
+        "Marathon",
+        "IronMan"
+      ],
+      "level": "Basic",
+      "name": "Running"
+    }
+  ],
+  "work": [
+    {
+      "company": "Company #1",
+      "endDate": "2019-03-10",
+      "highlights": [
+        "Stuff 1",
+        "Other stuff",
+        "more cool stuff..."
+      ],
+      "position": "Developer",
+      "startDate": "2017-01-01",
+      "summary": "Development team member, Awesome Feature.",
+      "website": "http://www.companyone.com"
+    },
+    {
+      "company": "Company #2",
+      "endDate": "2016-12-31",
+      "highlights": [
+        "Stuff 1",
+        "Other stuff",
+        "more cool stuff..."
+      ],
+      "position": "Developer",
+      "startDate": "2014-01-01",
+      "summary": "Development team member, Awesome Feature.",
+      "website": "http://www.companytwo.com"
+    }
+  ]
 }

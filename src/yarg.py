@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 import argparse
+import logging
 import os
+import sys
 from inout.loader import InputLoader
 from inout.writer import OutputWriter
+from helpers.logger import setup_logging
 
 
-def arguments() -> argparse.Namespace:
+def arguments(args) -> argparse:
     """
     Argument parser handling function
-    :return: the argparse namespace
+    :return: the argparse
     """
+    cwd = os.getcwd()
     io = OutputWriter()
     parser = argparse.ArgumentParser(
         description='Yarg! is Yet another resume generator that creates your '
@@ -21,28 +25,36 @@ def arguments() -> argparse.Namespace:
         dest='docformat', default='html', choices=io.supported_filetypes)
     parser.add_argument('-f', '--file', dest='input_file', required=True,
                         help='the input YAML file to read from')
+    parser.add_argument(
+        '-o', '--outdir', dest='output_dir', required=False,
+        help='the output dir to write documents, default current working '
+             'directory', default=cwd)
 
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 
-def generate(yargs: argparse.Namespace):
+def generate(yargs: argparse):
     """
     Generate all documents based on the input arguments
-    :param yargs: argparse namespace
+    :param yargs: argparse
     :return: None
     """
+    logger = logging.getLogger(__name__)
     iol = InputLoader()
     input_data = iol.load_yaml(filepath=yargs.input_file)
-    writedir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
     for docformat in yargs.docformat:
-        print("generate {}".format(docformat))
+        logger.info("generate %s", docformat)
         iow = OutputWriter(filetype=docformat)
         iow.generate_output(input_json=input_data)
-        wrote = iow.save_outputfile(filepath=writedir)
-        print("Wrote document: {}".format(wrote))
+        wrote = iow.save_outputfile(filepath=yargs.output_dir)
+        logger.info("Wrote document: %s", wrote)
+
+
+def main(args):
+    generate(arguments(args))
 
 
 if __name__ == '__main__':
-    args = arguments()
-    generate(args)
+    setup_logging()
+    main(sys.argv[1:])

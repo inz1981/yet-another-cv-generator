@@ -2,7 +2,6 @@
 import os
 import shutil
 import unittest
-
 import utils
 from inout.loader import InputLoader
 from inout.writer import OutputWriter
