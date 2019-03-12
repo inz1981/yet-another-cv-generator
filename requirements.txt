@@ -1,3 +1,5 @@
 pyaml
 jinja2
 pytest
+pytest-pylint
+pytest-pep8

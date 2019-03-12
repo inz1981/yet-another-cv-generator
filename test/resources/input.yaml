@@ -1,5 +1,6 @@
 basics:
-  name: Kålle (1976-01-29)
+  dateOfBirth: "1978-01-29"
+  name: Kålle
   label: Developer
   picture: http://mypage.se/img/kalle.jpg
   email: kalle@gmail.com
